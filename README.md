@@ -125,7 +125,15 @@ nhtsa-recall-lookup/
 
 ### Quick Start (No Build Required!)
 
-See [QUICKSTART.md](QUICKSTART.md) for the fastest way to use this library.
+See [QUICKSTART.md](docs/QUICKSTART.md) for the fastest way to use this library.
+
+### 📚 Full Documentation
+
+Browse all documentation in the [docs](docs/) directory:
+- [Quick Start Guide](docs/QUICKSTART.md)
+- [Android Integration](docs/ANDROID_INTEGRATION.md)
+- [VIN Decoder Integration](docs/INTEGRATION.md)
+- [Immediate Usage](docs/USE_NOW.md)
 
 ### Java/Android (Git Submodule - Available Now)
 
