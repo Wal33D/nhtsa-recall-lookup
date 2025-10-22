@@ -123,18 +123,15 @@ nhtsa-recall-lookup/
 
 ## 🚀 Installation
 
-### Java/Android (Gradle)
+### Quick Start (No Build Required!)
 
-Add as a dependency:
-```gradle
-dependencies {
-    implementation 'io.github.recalllookup:nhtsa-recall-lookup:1.0.0'
-}
-```
+See [QUICKSTART.md](QUICKSTART.md) for the fastest way to use this library.
 
-Or as a Git submodule:
+### Java/Android (Git Submodule - Available Now)
+
 ```bash
-git submodule add https://github.com/Wal33D/nhtsa-recall-lookup.git
+# In your project root
+git submodule add https://github.com/Wal33D/nhtsa-recall-lookup.git modules/recall-lookup
 ```
 
 Then in `settings.gradle`:
