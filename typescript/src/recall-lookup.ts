@@ -74,6 +74,43 @@ export class RecallLookup {
   }
 
   /**
+   * Get recalls by VIN
+   */
+  async getRecallsByVIN(vin: string): Promise<RecallRecord[]> {
+    if (!vin || vin.length !== 17) {
+      throw new Error('Valid 17-character VIN is required');
+    }
+
+    // Check cache
+    const cacheKey = `vin:${vin}`.toLowerCase();
+    const cached = this.getFromCache(cacheKey);
+    if (cached) {
+      return cached;
+    }
+
+    try {
+      const response = await this.apiClient.get<NHTSARecallResponse>('/vehicle/v1/recalls/byvin', {
+        params: { vin }
+      });
+
+      const recalls = this.parseResponse(response.data);
+
+      // Cache result
+      this.cache.set(cacheKey, {
+        data: recalls,
+        timestamp: Date.now()
+      });
+
+      return recalls;
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        throw new Error(`NHTSA API error: ${error.message}`);
+      }
+      throw error;
+    }
+  }
+
+  /**
    * Get recall by campaign number
    */
   async getRecallByCampaignNumber(campaignNumber: string): Promise<RecallRecord[]> {

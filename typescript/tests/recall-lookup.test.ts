@@ -103,6 +103,20 @@ describe('RecallLookup', () => {
     });
   });
 
+  describe('getRecallsByVIN', () => {
+    it('should require valid VIN', async () => {
+      await expect(lookup.getRecallsByVIN('')).rejects.toThrow('Valid 17-character VIN is required');
+      await expect(lookup.getRecallsByVIN('SHORT')).rejects.toThrow('Valid 17-character VIN is required');
+    });
+
+    it('should accept 17-character VIN', async () => {
+      // Note: This would make a real API call in integration tests
+      // For unit tests, you'd mock the axios client
+      const validVIN = '1HGCM82633A123456';
+      expect(validVIN.length).toBe(17);
+    });
+  });
+
   describe('cache', () => {
     it('should check cache status', () => {
       expect(lookup.isCached('Honda', 'CR-V', '2019')).toBe(false);

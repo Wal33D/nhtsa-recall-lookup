@@ -99,8 +99,11 @@ import { RecallLookup } from '@wal33d/nhtsa-recall-lookup';
 
 const lookup = new RecallLookup();
 
-// Get recalls for specific vehicle
-const recalls = await lookup.getRecalls('Honda', 'CR-V', '2019');
+// Get recalls by VIN (easiest method)
+const recalls = await lookup.getRecallsByVIN('1HGCM82633A123456');
+
+// Or get recalls by make/model/year
+const recalls2 = await lookup.getRecalls('Honda', 'CR-V', '2019');
 
 for (const recall of recalls) {
     if (RecallLookup.isCriticalRecall(recall)) {
