@@ -4,6 +4,8 @@
 [![Java](https://img.shields.io/badge/Java-11+-orange.svg)](https://www.oracle.com/java/)
 [![Android](https://img.shields.io/badge/Android-API%2021+-green.svg)](https://developer.android.com/)
 [![Python](https://img.shields.io/badge/Python-3.6+-blue.svg)](https://www.python.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg)](https://www.typescriptlang.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-14+-green.svg)](https://nodejs.org/)
 
 Standalone multi-platform library for looking up vehicle safety recalls from the NHTSA (National Highway Traffic Safety Administration) database.
 
@@ -91,10 +93,32 @@ critical = lookup.filter_critical_recalls(recalls)
 print(f"Found {len(critical)} critical safety recalls")
 ```
 
+### TypeScript/JavaScript
+```typescript
+import { RecallLookup } from '@wal33d/nhtsa-recall-lookup';
+
+const lookup = new RecallLookup();
+
+// Get recalls for specific vehicle
+const recalls = await lookup.getRecalls('Honda', 'CR-V', '2019');
+
+for (const recall of recalls) {
+    if (RecallLookup.isCriticalRecall(recall)) {
+        console.log(`⚠️ CRITICAL: ${recall.summary}`);
+    }
+    console.log(`Campaign: ${recall.nhtsaCampaignNumber}`);
+    console.log(`Component: ${recall.component}`);
+}
+
+// Filter critical recalls
+const critical = RecallLookup.filterCriticalRecalls(recalls);
+console.log(`Found ${critical.length} critical safety recalls`);
+```
+
 ## ✨ Features
 
 - **Free Government API** - No API key required
-- **Multi-Platform** - Java, Android, and Python implementations
+- **Multi-Platform** - Java, Android, Python, and TypeScript/JavaScript implementations
 - **Safety Indicators** - Critical recall detection (park outside, do not drive)
 - **OTA Update Detection** - Identifies recalls fixable via over-the-air updates
 - **Built-in Caching** - Reduces API calls and improves performance
