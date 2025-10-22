@@ -52,7 +52,7 @@ public class RecallLookupService {
                 @Query("model") String model
         );
 
-        @GET("recalls/campaignNumber")
+        @GET("campaignNumber")
         Call<RecallResponse> getRecallByCampaignNumber(
                 @Query("campaignNumber") String campaignNumber
         );

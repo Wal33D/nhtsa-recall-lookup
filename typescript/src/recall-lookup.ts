@@ -52,7 +52,7 @@ export class RecallLookup {
     }
 
     try {
-      const response = await this.apiClient.get<NHTSARecallResponse>('/vehicle/v1/recalls/bymodel', {
+      const response = await this.apiClient.get<NHTSARecallResponse>('/recallsByVehicle', {
         params
       });
 
@@ -89,7 +89,7 @@ export class RecallLookup {
     }
 
     try {
-      const response = await this.apiClient.get<NHTSARecallResponse>('/vehicle/v1/recalls/byvin', {
+      const response = await this.apiClient.get<NHTSARecallResponse>('/recallsByVehicle', {
         params: { vin }
       });
 
@@ -126,7 +126,7 @@ export class RecallLookup {
     }
 
     try {
-      const response = await this.apiClient.get<NHTSARecallResponse>('/vehicle/v1/recalls/bycampaignnumber', {
+      const response = await this.apiClient.get<NHTSARecallResponse>('/campaignNumber', {
         params: { campaignNumber }
       });
 
