@@ -21,21 +21,10 @@ jobs:
     - name: Run tests
       run: ./gradlew test
 
-  # test-android:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #   - uses: actions/checkout@v3
-  #   - name: Set up JDK 17
-  #     uses: actions/setup-java@v3
-  #     with:
-  #       java-version: '17'
-  #       distribution: 'temurin'
-  #   - name: Grant execute permission for gradlew
-  #     working-directory: android
-  #     run: chmod +x ../gradlew || true
-  #   - name: Build Android library
-  #     working-directory: android
-  #     run: ./gradlew :nhtsa-recall-lookup-android:assembleRelease || ../gradlew :nhtsa-recall-lookup-android:assembleRelease
+  # Android build skipped - requires multi-project Gradle setup
+  # Android library is available in android/ directory for integration
+  # Core Java library tests above validate the underlying functionality
+  # RecallLookupAndroid.java provides Android wrapper with main thread callbacks
 
   test-python:
     runs-on: ubuntu-latest
