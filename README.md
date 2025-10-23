@@ -380,4 +380,4 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## 📊 API Status
 
-NHTSA Recall API Status: ![API Status](https://img.shields.io/website?url=https%3A%2F%2Fapi.nhtsa.gov%2Frecalls)
+NHTSA Recall API Status: ![API Status](https://img.shields.io/website?url=https%3A%2F%2Fapi.nhtsa.gov%2Frecalls%2FrecallsByVehicle%3Fmake%3DHonda%26model%3DAccord%26modelYear%3D2020&label=NHTSA%20API&up_message=online&down_message=offline)
