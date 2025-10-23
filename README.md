@@ -358,12 +358,6 @@ pytest tests/
 
 MIT License - see [LICENSE](LICENSE) file for details.
 
-## 📧 Contact
-
-**Author**: Wal33D
-**Email**: aquataze@yahoo.com
-**GitHub**: [@Wal33D](https://github.com/Wal33D)
-
 ## 🙏 Acknowledgments
 
 - NHTSA for providing free public access to recall data
