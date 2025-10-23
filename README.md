@@ -11,9 +11,6 @@ Standalone multi-platform library for looking up vehicle safety recalls from the
 
 **Sister repository to [nhtsa-vin-decoder](https://github.com/Wal33D/nhtsa-vin-decoder)**
 
-**Author**: Wal33D
-**Email**: aquataze@yahoo.com
-
 ## 🎯 Purpose
 
 This library provides a dedicated, lightweight solution for accessing NHTSA recall data without the overhead of full VIN decoding. Perfect for applications that need to:
