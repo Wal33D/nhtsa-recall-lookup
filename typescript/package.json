@@ -1,6 +1,6 @@
 {
   "name": "@wal33d/nhtsa-recall-lookup",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "NHTSA vehicle recall campaign lookup for TypeScript/JavaScript. Search recalls by VIN, make/model/year, or campaign number.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
