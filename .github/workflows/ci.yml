@@ -21,6 +21,22 @@ jobs:
     - name: Run tests
       run: ./gradlew test
 
+  test-android:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+    - name: Grant execute permission for gradlew
+      working-directory: android
+      run: chmod +x ../gradlew || true
+    - name: Build Android library
+      working-directory: android
+      run: ./gradlew :nhtsa-recall-lookup-android:assembleRelease || ../gradlew :nhtsa-recall-lookup-android:assembleRelease
+
   test-python:
     runs-on: ubuntu-latest
     strategy:
