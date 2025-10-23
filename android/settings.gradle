@@ -18,5 +18,5 @@ rootProject.name = "NHTSA Recall Lookup"
 include ':nhtsa-recall-lookup-android'
 include ':nhtsa-recall-lookup-java'
 
-// Point to the Java library project
-project(':nhtsa-recall-lookup-java').projectDir = new File(rootDir, '../java')
+// Point to the root Java library project
+project(':nhtsa-recall-lookup-java').projectDir = new File(rootDir, '../')
