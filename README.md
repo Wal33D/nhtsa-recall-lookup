@@ -9,7 +9,15 @@
 
 Standalone multi-platform library for looking up vehicle safety recalls from the NHTSA (National Highway Traffic Safety Administration) database.
 
-**Sister repository to [nhtsa-vin-decoder](https://github.com/Wal33D/nhtsa-vin-decoder)**
+## Sister Projects
+
+Part of the NHTSA automotive diagnostic toolkit:
+
+- **[nhtsa-vin-decoder](https://github.com/Wal33D/nhtsa-vin-decoder)** - Decode VINs to get vehicle make/model/year (use this first!)
+- **[nhtsa-recall-lookup](https://github.com/Wal33D/nhtsa-recall-lookup)** - This project (recall lookup)
+- **[dtc-database](https://github.com/Wal33D/dtc-database)** - Comprehensive OBD-II diagnostic trouble code database
+
+**Two-Step Workflow:** VIN Decoder extracts make/model/year → Recall Lookup finds safety recalls
 
 ## 🎯 Purpose
 
